@@ -93,3 +93,13 @@ function findElement(arr, func) {
 function booWho(bool) {
     return (typeof bool) === "boolean" ? true:false;
 }
+
+// #11 Title Case a Sentence
+function titleCase(str) {
+  let lowercase = str.toLowerCase();
+  let arr = lowercase.split(" ");
+  for(let i=0;i<arr.length;i++){
+   arr[i]=(arr[i].charAt(0).toUpperCase()) + arr[i].substring(1,arr[i].length);
+  }
+  return arr.join(" ");
+}
