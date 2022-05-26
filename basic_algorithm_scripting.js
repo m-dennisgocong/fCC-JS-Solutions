@@ -53,4 +53,9 @@ function largestOfFour(arr) {
       largeNumbers.push(arr[i][arr[i].length-1])
     }
     return largeNumbers;
+
+}
+// #6 Confirm the Ending
+function confirmEnding(str, target) {
+  return str.substring(str.length - target.length,str.length) == target ? true:false;
 }
