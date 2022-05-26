@@ -103,3 +103,20 @@ function titleCase(str) {
   }
   return arr.join(" ");
 }
+
+// #12 Slice and Splice
+function frankenSplice(arr1, arr2, n) {
+  const temp = [];
+  if(arr2.length===0){
+    temp.push(...arr1);
+  }
+  else{
+    for(let i=0;i<arr2.length;i++){
+      if(i === n){
+        temp.push(...arr1);
+      }
+      temp.push(arr2[i]);
+    }
+  }
+  return temp;
+}
