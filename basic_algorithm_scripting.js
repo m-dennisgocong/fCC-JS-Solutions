@@ -53,4 +53,43 @@ function largestOfFour(arr) {
       largeNumbers.push(arr[i][arr[i].length-1])
     }
     return largeNumbers;
+
+}
+// #6 Confirm the Ending
+function confirmEnding(str, target) {
+  return str.substring(str.length - target.length,str.length) == target ? true:false;
+}
+
+// #7 Repeat a string
+function repeatStringNumTimes(str, num) {
+    if(num>0){
+    return str + repeatStringNumTimes(str, num-1);
+    }
+    else{
+      return "";
+    } 
+}
+// #8 Truncate a String
+function truncateString(str, num) {
+    return str.length > num? str.substring(0,num)+"...": str;
+}
+
+/* 
+    #9 Finders Keepers
+    func:num => num % 2 === 0
+    findElement([1, 3, 5, 9], num => num % 2 === 0));
+*/
+function findElement(arr, func) {
+    let num = 0;
+    while(arr.length>num){
+      if(func(arr[num])){
+        return arr[num];
+      }
+      num++;
+    }
+}
+
+// #10 Boo who
+function booWho(bool) {
+    return (typeof bool) === "boolean" ? true:false;
 }
