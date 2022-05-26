@@ -120,3 +120,16 @@ function frankenSplice(arr1, arr2, n) {
   }
   return temp;
 }
+
+// #12 Falsy Bouncer
+function bouncer(arr) {
+  let temp=[];
+  console.log(Boolean(NaN))
+  for(let i=0;i<arr.length;i++){
+    if(!Boolean(arr[i])){  
+    }else{
+    temp.push(arr[i]);
+    }
+  }
+  return temp;
+}
