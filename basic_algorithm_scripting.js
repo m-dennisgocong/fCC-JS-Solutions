@@ -30,6 +30,7 @@ function factorialize(num) {
       return "whole number only"
     }
   }
+
   /*
     #4 Find the Longest Word in a String 
     Return the length of the longest word in the provided sentence.
@@ -40,7 +41,7 @@ function findLongestWordLength(str) {
     for(let i=0;i<arr.length;i++){
         wordLength.push(arr[i].length);//push each word length
     }
-    wordLength.sort(function(a, b){return a - b});
+    wordLength.sort(function(a, b){return a - b}); //sort ascending order
     return wordLength[wordLength.length-1];
 }
 
@@ -48,13 +49,13 @@ function findLongestWordLength(str) {
 function largestOfFour(arr) {
     const largeNumbers = [];
     for(let i=0;i<arr.length;i++){
-      arr[i].sort(function(a, b){return a - b});
+      arr[i].sort(function(a, b){return a - b}); //sort ascending order
       //console.log(arr[i][arr[i].length-1])
-      largeNumbers.push(arr[i][arr[i].length-1])
+      largeNumbers.push(arr[i][arr[i].length-1]) //push the last element which is the largest number
     }
-    return largeNumbers;
-
+  return largeNumbers;
 }
+
 // #6 Confirm the Ending
 function confirmEnding(str, target) {
   return str.substring(str.length - target.length,str.length) == target ? true:false;
@@ -63,12 +64,13 @@ function confirmEnding(str, target) {
 // #7 Repeat a string
 function repeatStringNumTimes(str, num) {
     if(num>0){
-    return str + repeatStringNumTimes(str, num-1);
+      return str + repeatStringNumTimes(str, num-1);
     }
     else{
       return "";
     } 
 }
+
 // #8 Truncate a String
 function truncateString(str, num) {
     return str.length > num? str.substring(0,num)+"...": str;
@@ -132,4 +134,19 @@ function bouncer(arr) {
     }
   }
   return temp;
+}
+
+// #13 Where do I Belong
+function getIndexToIns(arr, num) {
+
+  if(arr.length === 0){ 
+    return 0;
+  }
+  arr.sort(function(a,b){return a-b}); //sort ascending order
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]>=num){
+      return i;
+    }
+  }
+  return arr.length;
 }
