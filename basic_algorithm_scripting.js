@@ -150,3 +150,19 @@ function getIndexToIns(arr, num) {
   }
   return arr.length;
 }
+
+// #14 Mutation
+function mutation(arr) {
+  let arr1 =arr[0].toLowerCase();
+  let arr2 =arr[1].toLowerCase();
+  let objw = {};
+  for(let i=0;i<arr1.length;i++){
+    objw[arr1[i]] = i;//create object property name = arr1[i] with the value = i
+  }
+  for(let i=0;i<arr2.length;i++){
+    if(!objw.hasOwnProperty(arr2[i])){
+      return false;
+    }
+  }
+  return true;
+}
