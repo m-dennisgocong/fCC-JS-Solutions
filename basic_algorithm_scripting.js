@@ -166,3 +166,17 @@ function mutation(arr) {
   }
   return true;
 }
+/* #16 Chunky Monkey 
+  split the array(first argument) into a groups of size(second argument) and
+  add the last remaining of the array
+*/
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  
+  //splice the array until the length is less the the size of the group
+  while(arr.length > size){
+    newArr.push(arr.splice(0,size));
+  }
+  newArr.push(arr);
+  return newArr;
+}
