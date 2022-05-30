@@ -123,7 +123,7 @@ function frankenSplice(arr1, arr2, n) {
   return temp;
 }
 
-// #12 Falsy Bouncer
+// #13 Falsy Bouncer
 function bouncer(arr) {
   let temp=[];
   console.log(Boolean(NaN))
@@ -136,7 +136,7 @@ function bouncer(arr) {
   return temp;
 }
 
-// #13 Where do I Belong
+// #14 Where do I Belong
 function getIndexToIns(arr, num) {
 
   if(arr.length === 0){ 
@@ -151,7 +151,7 @@ function getIndexToIns(arr, num) {
   return arr.length;
 }
 
-// #14 Mutation
+// #15 Mutation
 function mutation(arr) {
   let arr1 =arr[0].toLowerCase();
   let arr2 =arr[1].toLowerCase();
