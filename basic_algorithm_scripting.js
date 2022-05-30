@@ -8,17 +8,21 @@ function convertToF(celsius) {
     return fahrenheit;
 }
 
-// #2 reverse a string
+/* #2 reverse a string 
+  I didn't convert the string to an array, I use recursion instead to avoid using loops
+*/
 function reverseString(str) {
     if(str.length>0){
-      return str[str.length - 1] + reverseString(str.substring(0,str.length-1));
+      return str[str.length - 1] + reverseString(str.substring(0,str.length-1));//get the last character and pass the remaining string
     }
     else{
       return "";
     } 
 }
 
-// #3 Factorialize a Number
+/* #3 Factorialize a Number 
+  I still use recursion it's the best way to solve the problem
+*/
 function factorialize(num) {
     if(num>0){
       return num * factorialize(num-1);
@@ -56,12 +60,16 @@ function largestOfFour(arr) {
   return largeNumbers;
 }
 
-// #6 Confirm the Ending
+/* #6 Confirm the Ending 
+  check if the a string(first argument) ends with given target string(second argument)
+*/
 function confirmEnding(str, target) {
   return str.substring(str.length - target.length,str.length) == target ? true:false;
 }
 
-// #7 Repeat a string
+/* #7 Repeat a string
+  I use recursion again 
+*/
 function repeatStringNumTimes(str, num) {
     if(num>0){
       return str + repeatStringNumTimes(str, num-1);
@@ -71,7 +79,7 @@ function repeatStringNumTimes(str, num) {
     } 
 }
 
-// #8 Truncate a String
+/* #8 Truncate a String */
 function truncateString(str, num) {
     return str.length > num? str.substring(0,num)+"...": str;
 }
@@ -91,12 +99,12 @@ function findElement(arr, func) {
     }
 }
 
-// #10 Boo who
+// #10 Boo who - check if it's boolean primitive
 function booWho(bool) {
     return (typeof bool) === "boolean" ? true:false;
 }
 
-// #11 Title Case a Sentence
+// #11 Title Case a Sentence - Capitalized the first character of each word 
 function titleCase(str) {
   let lowercase = str.toLowerCase();
   let arr = lowercase.split(" ");
@@ -106,7 +114,10 @@ function titleCase(str) {
   return arr.join(" ");
 }
 
-// #12 Slice and Splice
+/* #12 Slice and Splice - array insertion 
+  I recommend using splice() and slice() method 
+  End up torturing myself with out using them 
+*/
 function frankenSplice(arr1, arr2, n) {
   const temp = [];
   if(arr2.length===0){
@@ -123,10 +134,10 @@ function frankenSplice(arr1, arr2, n) {
   return temp;
 }
 
-// #13 Falsy Bouncer
+// #13 Falsy Bouncer - remove the falsy value: false, null, 0, "", undefined, and NaN
 function bouncer(arr) {
   let temp=[];
-  console.log(Boolean(NaN))
+  //console.log(Boolean(NaN))
   for(let i=0;i<arr.length;i++){
     if(!Boolean(arr[i])){  
     }else{
@@ -136,7 +147,7 @@ function bouncer(arr) {
   return temp;
 }
 
-// #14 Where do I Belong
+// #14 Where do I Belong - return the postion of the num(second argument) 
 function getIndexToIns(arr, num) {
 
   if(arr.length === 0){ 
@@ -151,7 +162,10 @@ function getIndexToIns(arr, num) {
   return arr.length;
 }
 
-// #15 Mutation
+/* #15 Mutation  
+  compare the two array, return true 
+  if all element of second array are present in the first array
+*/ 
 function mutation(arr) {
   let arr1 =arr[0].toLowerCase();
   let arr2 =arr[1].toLowerCase();
@@ -166,6 +180,7 @@ function mutation(arr) {
   }
   return true;
 }
+
 /* #16 Chunky Monkey 
   split the array(first argument) into a groups of size(second argument) and
   add the last remaining of the array
