@@ -1,7 +1,7 @@
-## JS Solutions  
+# freeCodeCamp JavaScript Solutions  
 
-freeCodeCamp JavaScript solutions for:
+This repo will contain solution for:
 - Basic Algorithm Scripting 
 - Intermediate Algorithm Scripting
-- JavaScript Algorithms and Data Structures Projects
+- 5 JavaScript Projects(certification requirement)
 
