@@ -25,3 +25,24 @@ function sumAll(arr) {
 }
 
 */
+
+// #2 Diff Two Arrays - return the symmetric difference of the two arrays
+
+function diffArray(arr1, arr2) {
+    const newArr = [];
+    
+    for(let i =0;i<arr2.length;i++){
+      if(arr1.indexOf(arr2[i]) < 0){
+        newArr.push((arr2[i]));
+      }
+    }
+  
+    for(let i =0;i<arr1.length;i++){
+      if(arr2.indexOf(arr1[i]) < 0){
+        newArr.push((arr1[i]));
+      }
+    }
+  
+    return newArr;
+}
+  
