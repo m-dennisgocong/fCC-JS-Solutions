@@ -27,7 +27,6 @@ function sumAll(arr) {
 */
 
 // #2 Diff Two Arrays - return the symmetric difference of the two arrays
-
 function diffArray(arr1, arr2) {
     const newArr = [];
     
@@ -45,4 +44,17 @@ function diffArray(arr1, arr2) {
   
     return newArr;
 }
-  
+
+/* #3 Seek and Destroy -  
+Remove all elements from the initial array that are of the same value on the second arguments.
+*/
+function destroyer(arr,...args) {
+  for(let i=0;i<args.length;i++){
+    while(arr.indexOf(args[i]) != -1){//stop when there is no more matching value
+      if(arr.indexOf(args[i]) >= 0){
+        arr.splice(arr.indexOf(args[i]),1)
+      }
+    }
+  }
+  return arr;
+}
