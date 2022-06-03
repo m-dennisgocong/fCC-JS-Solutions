@@ -75,7 +75,7 @@ function spinalCase(str) {
     temp.push(withDash[i]);
   }
   let word = temp.join("")
-  word = word.replace(/^-/,"");//don't let the string start with dash
+  word = word.replace(/^-+|-+$/g,"");//don't let the string start or end with dash
   word = word.replace(/-+/g,"-");//no duplicate dash   
   return word.toLowerCase();
 }
