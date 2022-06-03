@@ -58,3 +58,24 @@ function destroyer(arr,...args) {
   }
   return arr;
 }
+
+/*
+  #5 Spinal Tap Case
+  Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes
+*/
+function spinalCase(str) {
+  let space = /[\s_]/g;
+  let withDash = str.replace(space,"-");//replace the space and underscore with dash
+  let capitalLetter = /[A-Z]/;
+  let temp = [];
+  for(let i=0;i<withDash.length;i++){
+    if(capitalLetter.test(withDash[i])){//if character is Capital letter add dash to temp array
+      temp.push("-");
+    }
+    temp.push(withDash[i]);
+  }
+  let word = temp.join("")
+  word = word.replace(/^-/,"");//don't let the string start with dash
+  word = word.replace(/-+/g,"-");//no duplicate dash   
+  return word.toLowerCase();
+}
