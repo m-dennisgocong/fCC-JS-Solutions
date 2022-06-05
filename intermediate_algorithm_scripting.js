@@ -79,3 +79,16 @@ function spinalCase(str) {
   word = word.replace(/-+/g,"-");//no duplicate dash   
   return word.toLowerCase();
 }
+
+// #7 Search and Replace
+function myReplace(str, before, after) {
+  let wordBefore = new RegExp(before,'g');//regex
+  
+  //preserve the first character case in the orginal word(before) when replacing it
+  if(before.charAt(0) === before.charAt(0).toUpperCase()){ 
+    after = after.charAt(0).toUpperCase() + after.slice(1);
+  }else{
+    after = after.charAt(0).toLowerCase() + after.slice(1);
+  }
+  return str.replace(wordBefore, after);
+}
