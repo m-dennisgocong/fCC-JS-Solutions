@@ -59,6 +59,37 @@ function destroyer(arr,...args) {
   return arr;
 }
 
+// #4 Wherefore art thou 
+function whatIsInAName(collection, source) {
+
+  const arr = [];
+  const keys = Object.keys(source)
+
+  for(let i=0;i<collection.length;i++){
+    let check = false; 
+    for(let y=0;y<keys.length;y++){
+      if(keys[y] in collection[i]){
+        if(source[keys[y]] === collection[i][keys[y]]){
+          check = true; // it's true if the key's and it's value is in the collection
+        }else{
+          //break the loop and set the check value to false;
+          check = false;
+          break;
+        }
+      }
+      else{
+        // break the loop and set it to false so it won't add to array
+        check = false;
+        break;
+      }
+    }
+    if(check == true){
+      arr.push(collection[i])
+    }
+  }
+  return arr;
+}
+
 /*
   #5 Spinal Tap Case
   Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes
