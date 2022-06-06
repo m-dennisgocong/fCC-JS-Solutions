@@ -80,6 +80,24 @@ function spinalCase(str) {
   return word.toLowerCase();
 }
 
+// #6 Pig Latin
+function translatePigLatin(str) {
+
+  if(/^[aeiou]/.test(str) === true){
+    return str + "way";
+  }
+  else{
+    if(/[aeiou]+/.test(str) === false){
+      return str + "ay";
+    }
+    for(let i=0;i<str.length;i++){
+      if(/[aeiou]/.test(str[i])){
+        return str.slice(i) + str.slice(0,i) + "ay" 
+      }
+    }
+  }
+}
+
 // #7 Search and Replace
 function myReplace(str, before, after) {
   let wordBefore = new RegExp(before,'g');//regex
