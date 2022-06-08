@@ -159,3 +159,17 @@ function pairElement(str) {
   }
   return arr;
 }
+
+// Missing Letters
+function fearNotLetter(str) {
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  for(let i=0;i<str.length;i++){
+    if((letters.indexOf(str.charAt(i))) >= 0){
+      let index = letters.indexOf(str.charAt(i))
+      if(letters.charAt(index + 1) != str.charAt(i+1)){
+        return letters.charAt(index + 1);
+      }
+    }
+  }
+  return undefined;
+}
