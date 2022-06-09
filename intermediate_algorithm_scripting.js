@@ -160,7 +160,7 @@ function pairElement(str) {
   return arr;
 }
 
-// Missing Letters
+// Missing Letterse
 function fearNotLetter(str) {
   const letters = "abcdefghijklmnopqrstuvwxyz";
   for(let i=0;i<str.length;i++){
@@ -172,4 +172,14 @@ function fearNotLetter(str) {
     }
   }
   return undefined;
+}
+
+// Sorted Union
+function uniteUnique(...arr) {
+  let newArr = arr.reduce((array, item) => array.concat(item),[]);
+
+  return newArr.filter((item,index) => {
+    //console.log(item,index,newArr.indexOf(item))
+    return newArr.indexOf(item) === index
+  }) 
 }
