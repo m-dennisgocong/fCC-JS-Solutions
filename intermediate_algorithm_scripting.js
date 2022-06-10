@@ -203,3 +203,22 @@ function uniteUnique(...arr) {
   }) 
 }
 
+// Sum All Primes
+function sumPrimes(num){
+  let arr = [];
+  let counter = 1;
+  while(counter<=num){
+    let checker = 0;
+    for(let i=1;i<=counter;i++){
+      if(counter%i == 0){
+        checker++;
+      }
+    }
+    if(checker == 2){
+      arr.push(counter);
+      checker = 0;
+    }
+    counter += 1
+  }
+  return arr.reduce((sum,n)=> sum += n);
+}
