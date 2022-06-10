@@ -174,6 +174,25 @@ function fearNotLetter(str) {
   return undefined;
 }
 
+// Convert HTML Entities
+function convertHTML(str) {
+  const htmlEntities = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&apos;',
+    '"': '&quot;'
+  };
+    for(let i=0;i<str.length;i++){
+      if(htmlEntities.hasOwnProperty(str[i])){
+        str = str.replace(str[i],htmlEntities[str[i]]);
+      }
+    }
+  return str;
+}
+
+console.log(convertHTML('Stuff in "quotation marks"'));
+
 // Sorted Union
 function uniteUnique(...arr) {
   let newArr = arr.reduce((array, item) => array.concat(item),[]);
@@ -183,3 +202,4 @@ function uniteUnique(...arr) {
     return newArr.indexOf(item) === index
   }) 
 }
+
