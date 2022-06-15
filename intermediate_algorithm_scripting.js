@@ -203,6 +203,27 @@ function uniteUnique(...arr) {
   }) 
 }
 
+// Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+  let prevFn = 0; // previus fibonacci number
+  let fn = 1; // fibonacci number start at 1 
+  let sum = 0;
+  while(true){
+    // break the loop if the fn is greather than given number
+    if(fn>num){ 
+      break; 
+    }
+    // check if not even number then add to sum
+    if(fn % 2 !== 0){   
+      sum += fn;
+    }
+    let temp = fn;
+    fn = fn + prevFn;
+    prevFn = temp; 
+  }
+  return sum;
+}
+
 // Sum All Primes
 function sumPrimes(num){
   let arr = [];
