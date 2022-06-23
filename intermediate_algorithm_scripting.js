@@ -243,3 +243,25 @@ function sumPrimes(num){
   }
   return arr.reduce((sum,n)=> sum += n);
 }
+
+// Smallest Common Multiple
+function smallestCommons(arr) {
+  let min = arr[0], max = arr[1];
+  //swap if min is greater than max
+  if(min>max) [min,max] = [max,min];
+
+  // check if it's evenly divisible by all numbers in range
+  const isSCM = (num) => {
+    for(let i=min; i<=max;i++){
+      if(num % i != 0) return false;
+    }
+    return true;
+  }
+  
+  let num = max;
+  //stop if isSCM is true
+  while(!isSCM(num)){
+    num += max;
+  } 
+  return num;
+}
