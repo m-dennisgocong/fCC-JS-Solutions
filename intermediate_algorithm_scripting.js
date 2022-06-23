@@ -191,8 +191,6 @@ function convertHTML(str) {
   return str;
 }
 
-console.log(convertHTML('Stuff in "quotation marks"'));
-
 // Sorted Union
 function uniteUnique(...arr) {
   let newArr = arr.reduce((array, item) => array.concat(item),[]);
@@ -264,4 +262,21 @@ function smallestCommons(arr) {
     num += max;
   } 
   return num;
+}
+
+/* Drop it 
+  function call sample: 
+  dropElements([1, 2, 3], function(n) {return n < 3; });
+  passing function as an argument or you can say is a lambda function
+  This challenge is very similar to "Finders Keepers" on basic algorithm scripting
+*/
+function dropElements(arr, func) {
+  let temp = [];//temporary
+  for(let i=0;i<arr.length;i++){
+    if(func(arr[i])){ // if func return true then add the rest of the element
+      temp = arr.slice(i)
+      break;
+    }
+  }
+  return temp;
 }
