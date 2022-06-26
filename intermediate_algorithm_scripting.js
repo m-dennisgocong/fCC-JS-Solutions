@@ -280,3 +280,16 @@ function dropElements(arr, func) {
   }
   return temp;
 }
+
+// Steam Roller - flatten a nested array
+function steamrollArray(arr) {
+  let temp = []
+  for(let i=0;i<arr.length;i++){
+    if(Array.isArray(arr[i])){
+      temp.push(...steamrollArray(arr[i]));//spread
+    }else{
+      temp.push(arr[i])
+    }
+  }
+  return temp;
+}
