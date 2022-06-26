@@ -293,3 +293,9 @@ function steamrollArray(arr) {
   }
   return temp;
 }
+
+//Binary Agents - translate binary
+function binaryAgent(str) {
+  // split to array first, then use reduce method to add all translated binary to str
+  return str.split(" ").reduce((str, binary) => str += String.fromCharCode(parseInt(binary, 2)),[]);
+}
