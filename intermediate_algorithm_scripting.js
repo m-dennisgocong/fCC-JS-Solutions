@@ -308,3 +308,19 @@ function truthCheck(collection, pre) {
   }
   return true;
 }
+
+/* Arguments Optional - in this challenge I learn about the arguments object 
+  you can access the arguments object inside the functions, the arguments object will contain the values of the 
+  arguments passed to that function also implementing a carrying function is needed to solve this challenge
+*/
+function addTogether() {
+  let [first,second] = arguments;
+  if(typeof first !== "number") return;
+  if(second === undefined) 
+  return (second) => {
+    if(typeof second !== "number") return;
+    return first + second;
+  }
+  if(typeof second !== "number") return;
+  return first + second;
+}
