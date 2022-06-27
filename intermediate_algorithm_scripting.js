@@ -294,8 +294,17 @@ function steamrollArray(arr) {
   return temp;
 }
 
-//Binary Agents - translate binary
+// Binary Agents - translate binary
 function binaryAgent(str) {
   // split to array first, then use reduce method to add all translated binary to str
   return str.split(" ").reduce((str, binary) => str += String.fromCharCode(parseInt(binary, 2)),[]);
+}
+
+/* Everything be true - Check if the predicate (second argument) is truthy
+on all elements of a collection (first argument) */
+function truthCheck(collection, pre) {
+  for(let i=0;i<collection.length;i++){
+    if(!collection[i].hasOwnProperty(pre) || !Boolean(collection[i][pre])) return false;
+  }
+  return true;
 }
