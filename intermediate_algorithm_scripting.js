@@ -324,3 +324,28 @@ function addTogether() {
   if(typeof second !== "number") return;
   return first + second;
 }
+
+/* Make a Person */
+const Person = function(firstAndLast) {
+
+  let [firstname,lastname] = firstAndLast.split(" ")
+  
+  this.getFirstName = function() {
+    return firstname;
+  };
+  this.getLastName = function() {
+    return lastname;
+  };
+  this.getFullName = function() {
+    return firstname + " " + lastname;
+  };
+  this.setFirstName = function(first) {
+    firstname = first;
+  };
+  this.setLastName = function(last) {
+    lastname = last;
+  };
+  this.setFullName = function(name) {
+    [firstname,lastname] = name.split(" ")
+  };  
+};
