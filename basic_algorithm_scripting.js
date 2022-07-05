@@ -64,7 +64,8 @@ function largestOfFour(arr) {
   check if the a string(first argument) ends with given target string(second argument)
 */
 function confirmEnding(str, target) {
-  return str.substring(str.length - target.length,str.length) == target ? true:false;
+  return str.endsWith(target);
+  //return str.substring(str.length - target.length,str.length) == target ? true:false;
 }
 
 /* #7 Repeat a string
